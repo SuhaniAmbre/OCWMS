@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="OCWMS.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+        <meta charset="utf-8" />
+        <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /> </title>
+<style>
+   /* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('masterbg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Header Styling */
+#header {
+    background: #1E2A38;
+    color: #FFD700;
+    padding: 20px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Bar */
+nav {
+    background: #2C3E50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    color: #FFD700;
+    text-align: center;
+    padding: 16px 22px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: #E74C3C;
+    color: white;
+}
+
+/* Dropdown Styling with Glassmorphism */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 5px;
+    min-width: 180px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background: rgba(255, 215, 0, 0.3);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Content Area */
+#content {
+    padding: 50px 20px;
+    min-height: 75vh;
+}
+
+/* Footer Styling */
+#footer {
+    background: #1E2A38;
+    color: #FFD700;
+    text-align: center;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+    #header h1 img {
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    }
+</style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+            <h1>
+        <asp:Image ID="Image1" runat="server" Height="101px" Width="103px" ImageUrl="~/weblogo.jpg" />
+        Online College Welfare Management System
+
+    </h1>
+          <nav>
+              <ul>
+                <li><a href="Home.aspx">Home</a></li>
+                         <li><a href="Contact Us.aspx">Contact Us</a></li>
+                         <li><a href="About Us.aspx">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Login/Register</a>
+                    <div class="dropdown-content">
+                         <a href="AdminLogin.aspx">Admin Login</a>
+                        <a href="UserLog.aspx">Employee Login</a>
+                        </div>
+                    </li>                   
+            </ul>
+              </nav>
+        </div>
+               <div id="content">
+              <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+         
+                  </div>
+            <div id="footer">
+            <p>&copy; 2025 Online College Welfare Management System</p>
+       </div>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,194 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="OCWMS.Site2" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    
+    <!-- Import Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('masterbg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Header Styling */
+        #header {
+            background: #1E2A38;
+            color: #FFD700;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+         h1 {
+            display: flex; /* Flexbox layout */
+            align-items: center; /* Vertical alignment */
+            justify-content: center; /* Center text horizontally */
+            text-align: center;
+            gap: 15px; /* Space between image and text */
+            margin: 0; /* Remove default margin */
+            padding: 10px 0; /* Padding for better appearance */
+        }
+
+      #header h1 img {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow effect */
+}
+
+
+        /* Navigation Bar */
+        nav {
+            background: #2C3E50;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #FFD700;
+            text-align: center;
+            padding: 16px 22px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            background: #E74C3C;
+            color: white;
+        }
+
+        /* Dropdown Styling with Glassmorphism */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 5px;
+            min-width: 180px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(255, 215, 0, 0.3);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Content Area */
+        #content {
+            padding: 50px 20px;
+            min-height: 75vh;
+        }
+
+        /* Footer Styling */
+        #footer {
+            background: #1E2A38;
+            color: #FFD700;
+            text-align: center;
+            padding: 14px;
+            font-size: 14px;
+            font-weight: bold;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+        }
+          
+
+/* Centered Title */
+    </style>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+    <h1>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Image ID="Image2" runat="server" Height="36px" ImageUrl="~/LogBG.jpg" Width="44px" />
+            <asp:Label ID="lblUserName" runat="server" Font-Size="Medium" ForeColor="#0099FF"></asp:Label>
+
+    </h1>
+            <h1>
+        <asp:Image ID="Image1" runat="server" Height="101px" Width="103px" ImageUrl="~/weblogo.jpg" />
+        Online College Welfare Management System
+
+    </h1>
+
+</div>
+            <nav>
+                <ul>
+                    <li><a href="HomeAd.aspx">Home</a></li>
+                    <li><a href="EmployeeAdmin.aspx">Employees</a></li>
+                    <li><a href="SalaryAdmin.aspx">Salary</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Benefits</a>
+                        <div class="dropdown-content">
+                            <a href="EPFAdmin.aspx">EPF</a>
+                            <a href="PPFAdmin.aspx"">PPF</a>
+                            <a href="LeavesAdmin.aspx">Leaves</a>
+                            <a href="AllowanceAdmin.aspx">Allowances</a>
+                            <a href="MediclaimAdmin.aspx">Mediclaim</a>
+                            <a href="PensionAdmin.aspx">Pension</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Notifications</a>
+                        <div class="dropdown-content">
+                             <a href="EPFAdNoti.aspx">EPF</a>
+                            <a href="PPFAdNoti.aspx">PPF</a>
+                            <a href="LeaveAdNoti.aspx">Leaves</a>
+                            <a href="AlloAd.aspx">Allowances</a>
+                            <a href="MAdNoti.aspx">Mediclaim</a>
+
+                        </div>
+                    </li>
+                    <li><a href="Logout.aspx">Logout</a></li>
+                </ul>
+            </nav>
+        
+
+        <div id="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+
+        <div id="footer">
+            <p>&copy; 2025 Online College Welfare Management System</p>
+        </div>
+    </form>
+</body>
+</html>
+
